@@ -15,12 +15,12 @@ class Button extends StatelessWidget {
         onPressed: () {},
         style: ElevatedButton.styleFrom(
           shape: shape,
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.pink.shade200.withOpacity(0.5),
           minimumSize: const Size.fromHeight(84),
         ),
         child: Text(
           text,
-          style: const TextStyle(fontSize: 32),
+          style: const TextStyle(fontSize: 33, color: Colors.white70),
         ),
       ),
     );

@@ -40,39 +40,60 @@ class Calculator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const History(),
-              const Result(),
-              Column(
-                children: <Widget>[
-                  Row(
-                      children: _sublistButtons(0, 4)
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                      children: _sublistButtons(4, 8)
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                      children: _sublistButtons(8, 12)
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                      children: _sublistButtons(12, 16)
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                      children: <Widget>[
-                        const SizedBox(width: 7), // It doesn't look right, but whatever
-                        ..._sublistButtons(16, 19)
-                      ]
-                  ),
+        body: Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors:[
+                  Colors.pinkAccent,
+                  Colors.blue,
                 ],
               )
-            ],
+          ) ,
+          child: Center(
+            child: Column(
+
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                Column(
+                  children: const [
+                    History(),
+                    Result(),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 50.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Row(
+                          children: _sublistButtons(0, 4)
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                          children: _sublistButtons(4, 8)
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                          children: _sublistButtons(8, 12)
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                          children: _sublistButtons(12, 16)
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                          children: <Widget>[
+                            const SizedBox(width: 0), // It doesn't look right, but whatever
+                            ..._sublistButtons(16, 19)
+                          ]
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         )
     );

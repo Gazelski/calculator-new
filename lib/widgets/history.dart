@@ -8,7 +8,7 @@ class History extends StatefulWidget {
 }
 
 class _HistoryState extends State<History> {
-  final String _result = '78 x 5 + 540 x 2';
+  final String _result = '4,92 x 420 + 69';
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,14 @@ class _HistoryState extends State<History> {
       padding: const EdgeInsets.fromLTRB(20, 5, 20, 5),
       child: Text(
         _result,
-        style: const TextStyle(fontSize: 24),
+        style: const TextStyle(fontSize: 25, color: Colors.white38,
+          shadows: <Shadow>[
+          Shadow(
+            offset: Offset(0, 0),
+            blurRadius: 8.0,
+            color: Color.fromARGB(125, 0, 0, 255),
+          ),
+        ],),
       ),
     );
   }

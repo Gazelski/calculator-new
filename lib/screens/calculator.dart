@@ -177,8 +177,8 @@ class _CalculatorState extends State<Calculator> {
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
         colors:[
-        Colors.pinkAccent,
-        Colors.blue,
+          Color(0xFFB74093),
+          Color(0xFF387777),
         ],
     )
     ) ,

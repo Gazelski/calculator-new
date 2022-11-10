@@ -111,11 +111,15 @@ class _CalculatorState extends State<Calculator> {
 
   void calc(Button button) {
     setState(() {
+      if (mainEquation.isNotEmpty){
+        secondEquation = mainEquation ;
+        return;
+      }
       try {
         Parser p = Parser();
         var equation = secondEquation.replaceAll('x', '*');
         if (isSymbol(getLast(equation))) {
-          equation = removeLast(equation);
+          secondEquation = removeLast(equation);
         }
         Expression exp = p.parse(equation);
         ContextModel cm = ContextModel();
@@ -123,6 +127,7 @@ class _CalculatorState extends State<Calculator> {
         if (mainEquation.endsWith('.0')) {
           mainEquation = mainEquation.substring(0, mainEquation.length - 2);
         }
+
       } catch (e) {
         mainEquation = '';
         debugPrint(e.toString());

@@ -14,6 +14,7 @@ class _CalculatorState extends State<Calculator> {
   String mainEquation = '';
   String secondEquation = '';
 
+
   String removeLast(String string) {
     if (string.isNotEmpty) {
       return string.substring(0, string.length - 1);
